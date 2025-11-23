@@ -1,3 +1,7 @@
+<?php
+require_once "lib/session.php"; // doit contenir session_start() propre
+var_dump($_SESSION);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,8 +34,12 @@
                 <li><a href="#" class="nav-link px-2">About</a></li>
             </ul>
             <div class="col-md-3 text-end"> 
-                <a href="login.php" class="btn btn-outline-primary me-2">Login</a> 
-                <button type="button" class="btn btn-primary">Sign-up</button> 
+                <?php if(isset($_SESSION['user'])) {?>
+                    <a href="logout.php" class="btn btn-outline-primary me-2">Logout</a> 
+                    <?php } else {?>
+                    <a href="login.php" class="btn btn-outline-primary me-2">Login</a> 
+                    <?php } ?>
+
             </div>
         </header>
     </div>

@@ -1,4 +1,5 @@
 <?php
+
 // __DIR__ = le dossier où se trouve le fichier PHP dans lequel cette ligne est écrite.
 require_once "templates/header.php";
 
