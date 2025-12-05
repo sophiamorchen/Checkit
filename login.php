@@ -4,8 +4,6 @@ require_once "lib/pdo.php";
 require_once "lib/user.php";
 
 $errors = [];
-var_dump($_SESSION);
-
 
 // NE PAS mettre session_destroy() ici !
 // La session doit rester active pour pouvoir stocker l'utilisateur connecté
@@ -24,8 +22,8 @@ if (isset($_POST['loginUser'])) {
         // afficher une erreur
         $errors[] = "Email ou mot de passe incorrect";
     }
-
 }
+
 ?>
 
 <div class="container col-xxl-8 px-4 py-5">
