@@ -2,8 +2,7 @@
 
 // __DIR__ = le dossier où se trouve le fichier PHP dans lequel cette ligne est écrite.
 require_once "templates/header.php";
-var_dump($_SESSION);
-echo __DIR__;
+
 
 
 ?>
@@ -11,7 +10,7 @@ echo __DIR__;
     <div class="container col-xxl-8 px-4 py-5">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
             <div class="col-10 col-sm-8 col-lg-6">
-                <img src="/assets/images/logo-checkit.png" class="d-block mx-lg-auto img-fluid" alt="Logo CheckIt" width="400" loading="lazy">
+                <img src="assets/images/logo-checkit.png" class="d-block mx-lg-auto img-fluid" alt="Logo CheckIt" width="400" loading="lazy">
             </div>
             <div class="col-lg-6">
                 <h1 class="display-5 fw-bold lh-1 mb-3">Gardez vos listes avec vous !</h1>

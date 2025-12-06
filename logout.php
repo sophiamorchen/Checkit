@@ -1,17 +1,12 @@
 <?php
-require_once "lib/session.php"; // session_start() ici
-
-// régénère l'ID de session pour protéger contre fixation, optionnel ici car juste après, on unset et on destroy
+require_once __DIR__ . "/lib/session.php";
+//Prévient les attaques de fixation de session
 session_regenerate_id(true);
 
-// détruit la session côté serveur
+//Supprime les données du serveur
 session_destroy();
 
-// vide toutes les variables de session
+//Supprime les données du tableau $_SESSION
 unset($_SESSION);
-// ou bien : $_SESSION = [];
 
-
-// redirection vers login
-header("Location: login.php");
-exit;
+header('location: login.php');
