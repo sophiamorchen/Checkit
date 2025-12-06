@@ -31,12 +31,12 @@ function saveList(PDO $pdo, string $title, int $userId, int $categoryId, ?int $i
         
     } else {
         // INSERT
-        $query = $pdo->prepare('INSERT INTO list (title, userId, categoryId)
-                                VALUES(:title, :userId, :categoryId)');
+        $query = $pdo->prepare('INSERT INTO list (title, user_id, category_id)
+                                VALUES(:title, :user_id, :category_id)');
     }
     $query->bindValue(':title', $title, PDO::PARAM_STR);
-    $query->bindValue(':userId', $userId, PDO::PARAM_INT);
-    $query->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
+    $query->bindValue(':user_id', $userId, PDO::PARAM_INT);
+    $query->bindValue(':category_id', $categoryId, PDO::PARAM_INT);
 
     $res = $query->execute();
 

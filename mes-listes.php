@@ -3,6 +3,7 @@ require_once 'templates/header.php';
 require_once 'lib/pdo.php';
 require_once 'lib/list.php';
 
+
 if (isset($_SESSION['user'])) {
     $lists = getListsByUserId($pdo, $_SESSION['user']['id']);
 }
@@ -12,12 +13,14 @@ if (isset($_SESSION['user'])) {
 <div class="container">
     <div class="d-flex justify-content-between align-items-center">
         <h1>Mes listes</h1>
+        <?php if(isUserConnected()) {?>
         <a href="ajout-modif-liste.php" class="btn btn-primary">Ajouter une liste</a>
+        <?php }?>
     </div>
 
 
     <div class="row">
-        <?php if (isset($_SESSION['user'])) { ?>
+        <?php if (isUserConnected()) { ?>
             <?php if ($lists) { ?>
                 <?php foreach ($lists as $list) { ?>
                     <div class="col-md-4 my-2">
