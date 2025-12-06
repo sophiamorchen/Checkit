@@ -1,16 +1,21 @@
 <?php
 
-require_once "templates/header.php";
-require 'lib/category.php';
+require_once  'templates/header.php';
 require 'lib/pdo.php';
+require 'lib/list.php';
+require 'lib/category.php';
 
 $categories = getCategories($pdo);
 
 // Le formulaire d'ajout-modif de liste a été envoyé
 if(isset($_POST['saveList'])){
     if(!empty($_POST['saveList'])){
-        $newEntry = saveList($pdo, $_POST['title'], $_POST['userId'], $_POST['categoryId']);
-        var_dump($newEntry);
+        $res = saveList($pdo, $_POST['title'], (int)$_SESSION['user']['id'], $_POST['category_id']);
+        if($res){
+
+        } else {
+            // erreur 
+        }
     } else {
         // erreur
     }

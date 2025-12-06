@@ -34,3 +34,8 @@ session_set_cookie_params([
 
 // Démarre la session PHP (en envoiant éventuellement l'entête Set-Cookie si la session n'existe pas encore).
 session_start();
+
+function isUserConnected(): bool
+{
+    return isset($_SESSION['user']);
+}

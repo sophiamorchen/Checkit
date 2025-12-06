@@ -33,12 +33,12 @@ require_once "lib/session.php"; // doit contenir session_start() propre
                 <li><a href="#" class="nav-link px-2">FAQs</a></li>
                 <li><a href="#" class="nav-link px-2">About</a></li>
             </ul>
-            <div class="col-md-3 text-end"> 
-                <?php if(isset($_SESSION['user'])) {?>
-                    <a href="logout.php" class="btn btn-outline-primary me-2">Logout</a> 
-                    <?php } else {?>
-                    <a href="login.php" class="btn btn-outline-primary me-2">Login</a> 
-                    <?php } ?>
+            <div class="col-md-3 text-end">
+                <?php if (isUserConnected()) { ?>
+                    <a href="logout.php" class="btn btn-outline-primary me-2">Déconnexion</a>
+                <?php } else { ?>
+                    <a href="login.php" class="btn btn-outline-primary me-2">Login</a>
+                <?php } ?>
 
             </div>
         </header>
